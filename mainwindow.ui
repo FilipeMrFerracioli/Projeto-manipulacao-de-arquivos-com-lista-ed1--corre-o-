@@ -11,81 +11,151 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Projeto manipulação de arquivos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MyFiles.qrc">
+    <normaloff>:/MyFiles/icon.png</normaloff>:/MyFiles/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color:#3EEEEEE;
+	/*color: #fff;*/
+}
+
+QMenuBar {
+	background-color:#3EEEEEE;
+}
+
+QPushButton{  
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color:#44c767;
+	border-radius:10%;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:22px;
+	padding:3px 3px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+QPushButton:hover{
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	background-color:#5cbf2a;
+}
+
+QPushButton:disabled {
+  background-color:rgba(68, 199, 103, 0.5);
+  border:rgba(68, 199, 103, 0.5);
+}
+
+QTableWidget {
+	 padding: 5px;
+     font-size: 16px;
+     border-width: 1px;
+     border-color: #44c767;
+     background-color: #3A3845;
+     color: #fff;
+     border-style: solid;
+     border-radius: 10%;
+     box-shadow: 0px 0px 0px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+}
+
+QTextEdit{
+     padding: 5px;
+     font-size: 16px;
+     border-width: 1px;
+     border-color: #44c767;
+     background-color: #3A3845;
+     color: #fff;
+     border-style: solid;
+     border-radius: 10%;
+     box-shadow: 0px 0px 0px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEditSaida">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>220</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>70</y>
-      <width>303</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Por:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="comboBoxPorTipo">
-         <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Por:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBoxPorTipo">
+            <item>
+             <property name="text">
+              <string>Nome</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Matricula</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>Nome</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Ordem:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Matricula</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Ordem:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="comboBoxPorAlfabeto">
-         <item>
-          <property name="text">
-           <string>Crescente</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Decrescente</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBoxPorAlfabeto">
+          <item>
+           <property name="text">
+            <string>Crescente</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Decrescente</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEditSaida">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTableWidget" name="tableWidgetGrid">
+      <column>
+       <property name="text">
+        <string>Matricula</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -129,6 +199,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="MyFiles.qrc"/>
+ </resources>
  <connections/>
 </ui>

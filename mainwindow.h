@@ -19,14 +19,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setGrid(minhaNamespace::LLDE<minhaNamespace::Pessoa> pessoa);
 private slots:
     void on_actionAbrir_triggered();
 
     void on_actionSalvar_triggered();
 
     void on_actionLimpar_triggered();
-
-    void on_pushButtonAdicionar_clicked();
 
     void on_comboBoxPorTipo_activated(int index);
 
